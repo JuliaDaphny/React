@@ -1,18 +1,25 @@
 import Menu from "./components/Menu";
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { button } from "react-bootstrap";
+import { Button, Container, Navbar, Nav, Card, Form, FormControl } from "react-bootstrap";
+import { isLabelWithInternallyDisabledControl } from "@testing-library/user-event/dist/utils";
+import Cartao from "./components/Cartao";
 
 function App() {
-  return (
-    <div>
-      <Menu />
+    return (
+        <div>
 
-      <h1>Hello World</h1>
-      <button variant="primary">Primary</button>
+            <Menu />
+        
+            <Cartao />
+            <Cartao />
 
-    </div>
-  );
+            <Container>
+                <h2>Olá Mundo. Tudo bem?</h2>
+                <Button variant="primary">primary</Button>
+            </Container>
+        </div>
+    );
 }
 
 export default App;
