@@ -1,52 +1,29 @@
-<<<<<<< HEAD
 import Menu from "./components/Menu";
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Container, Navbar, Nav, Card, Form, FormControl } from "react-bootstrap";
-import { isLabelWithInternallyDisabledControl } from "@testing-library/user-event/dist/utils";
-import Cartao from "./components/Cartao";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Carros from "./pages/Carros";
+import Array from "./pages/Array";
+import Objeto from "./pages/Objeto";
+import Pagina1 from "./pages/Pagina1";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Container } from "react-bootstrap";
 
 function App() {
-    return (
-        <div>
-
-            <Menu />
-        
-            <Cartao />
-            <Cartao />
-
-            <Container>
-                <h2>Olá Mundo. Tudo bem?</h2>
-                <Button variant="primary">primary</Button>
-            </Container>
-        </div>
-    );
+  return (
+    <div>
+      <BrowserRouter>
+        <Menu />
+        <Container>
+          <Routes>
+            <Route path="/" element={<Carros />} />
+            <Route path="/carros" element={<Carros />} />
+            <Route path="/array" element={<Array />} />
+            <Route path="/objeto" element={<Objeto />} />
+            <Route path="/pagina1" element={<Pagina1 />} />
+          </Routes>
+        </Container>
+      </BrowserRouter>
+    </div>
+  );
 }
 
-=======
-import Menu from "./components/Menu";
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Container, Navbar, Nav, Card, Form, FormControl } from "react-bootstrap";
-import { isLabelWithInternallyDisabledControl } from "@testing-library/user-event/dist/utils";
-import Cartao from "./components/Cartao";
-
-function App() {
-    return (
-        <div>
-
-            <Menu />
-        
-            <Cartao />
-            <Cartao />
-
-            <Container>
-                <h2>Olá Mundo. Tudo bem?</h2>
-                <Button variant="primary">primary</Button>
-            </Container>
-        </div>
-    );
-}
-
->>>>>>> 4f5e9848099624b671461e7098961e9e2ee894c3
 export default App;
