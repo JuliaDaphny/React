@@ -21,6 +21,12 @@ const Menu = () => {
             <Link className="nav-link" to="/pagina1">
               Página 1
             </Link>
+            <Link className="nav-link" to="/contador">
+              Contador
+            </Link>
+            <Link className="nav-link" to="/pages/filmes/FilmesPopulares">
+              Filmes Populares
+            </Link>
           </Nav>
         </Container>
       </Navbar>

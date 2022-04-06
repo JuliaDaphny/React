@@ -4,8 +4,10 @@ import Carros from "./pages/Carros";
 import Array from "./pages/Array";
 import Objeto from "./pages/Objeto";
 import Pagina1 from "./pages/Pagina1";
+import Contador from "./pages/Contador";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Container } from "react-bootstrap";
+import FilmesPopulares from "./pages/filmes/FilmesPopulares";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
             <Route path="/array" element={<Array />} />
             <Route path="/objeto" element={<Objeto />} />
             <Route path="/pagina1" element={<Pagina1 />} />
+            <Route path="/contador" element={<Contador />} />
+            <Route path="/pages/filmes/FilmesPopulares" element={<FilmesPopulares />} />
           </Routes>
         </Container>
       </BrowserRouter>
