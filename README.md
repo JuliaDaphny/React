@@ -68,3 +68,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Preparação do token
+
+Para preparar o token é necessário criar o arquivo:
+
+`src/services/token.js`
+
+O arquivo deve ter o escopo, alterando-se o valor [token] pelo token de autenticação JWT: 
+
+`const token = '[token]'
+
+export default token;`
