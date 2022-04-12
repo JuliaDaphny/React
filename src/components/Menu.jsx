@@ -27,6 +27,12 @@ const Menu = () => {
             <Link className="nav-link" to="/pages/filmes/FilmesPopulares">
               Filmes Populares
             </Link>
+            <Link className="nav-link" to="/pages/filmes/FilmesLancamento">
+              Filmes em Lançamento
+            </Link>
+            <Link className="nav-link" to="/pages/filmes/FilmesCartaz">
+              Filmes em Cartaz
+            </Link>
           </Nav>
         </Container>
       </Navbar>

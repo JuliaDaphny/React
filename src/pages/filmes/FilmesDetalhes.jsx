@@ -28,7 +28,6 @@ const FilmesDetalhes = () => {
 
     return (
         <div>
-
             <Container>
                 <Row>
                     <Col xs={5}>
@@ -52,7 +51,6 @@ const FilmesDetalhes = () => {
                     </Col>
                 </Row>
             </Container>
-
         </div>
     )
 };
