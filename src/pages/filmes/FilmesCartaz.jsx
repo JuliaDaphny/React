@@ -20,7 +20,7 @@ const FilmesCartaz = () => {
     return (
         <div>
 
-            <h1>Filmes em Cartaz</h1>
+            <h1 className="text-sm-center m-5">Escolha filmes em cartaz</h1>
 
             <Container>
                 <Row>

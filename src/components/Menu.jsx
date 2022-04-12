@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Menu = () => {
   return (
     <div>
-      <Navbar bg="dark" variant="dark" className="mb-3">
+      <Navbar bg="dark" variant="dark" className="mb-5">
         <Container>
           <Navbar.Brand href="#home">Navbar</Navbar.Brand>
           <Nav className="me-auto">
@@ -19,7 +19,7 @@ const Menu = () => {
               Objeto
             </Link>
             <Link className="nav-link" to="/pagina1">
-              Página 1
+              Página
             </Link>
             <Link className="nav-link" to="/contador">
               Contador
