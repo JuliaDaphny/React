@@ -1,7 +1,7 @@
 import React from "react"
 import { useEffect } from "react";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import apiFilmes from '../../services/apiFilmes'
 
@@ -28,6 +28,13 @@ const FilmesDetalhes = () => {
 
     return (
         <div>
+            
+            {!filme.id && <h1>Carregando... Aguarde</h1>}
+
+            {filme.id &&
+
+            <div>
+
             <Container>
                 <Row>
                     <Col xs={5}>
@@ -40,17 +47,26 @@ const FilmesDetalhes = () => {
                                 <Card.Text>
                                     {filme.overview}
                                 </Card.Text>
+
+                                <p><strong> Gêneros: </strong>
+                                    {filme.genres.map(item => (
+                                        <span>{item.name}, </span>
+                                    ))}
+                                </p>
+
                                 <Card.Text className="blockquote mb-0"></Card.Text>
                                 <Card.Footer className="text-muted">Data de lançamento: {dataLancamento}</Card.Footer>
                                 <Card.Footer className="text-muted">Popularidade do filme: {filme.popularity}</Card.Footer>
-                                <a className="btn btn-primary btn-lg btn-sm mt-3" href={filme.homepage}>
-                                    Assista o filme e seja feliz!
-                                </a>
+                                <a className="btn btn-dark btn-lg btn-sm mt-3" href={filme.homepage}>Assista o filme e seja feliz!</a>
+                                <Link className="btn btn-danger btn-lg btn-sm mt-3 m-1" to={-1}>Voltar</Link>
                             </Card.Body>
                         </Card>
                     </Col>
                 </Row>
             </Container>
+
+            </div>
+            }
         </div>
     )
 };

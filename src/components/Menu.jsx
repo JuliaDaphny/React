@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Menu = () => {
@@ -8,31 +8,28 @@ const Menu = () => {
       <Navbar bg="dark" variant="dark" className="mb-5">
         <Container>
           <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+
           <Nav className="me-auto">
-            <Link className="nav-link" to="/carros">
-              Carros
-            </Link>
-            <Link className="nav-link" to="/array">
-              Array
-            </Link>
-            <Link className="nav-link" to="/objeto">
-              Objeto
-            </Link>
-            <Link className="nav-link" to="/pagina1">
-              Página
-            </Link>
-            <Link className="nav-link" to="/contador">
-              Contador
-            </Link>
-            <Link className="nav-link" to="/pages/filmes/FilmesPopulares">
-              Filmes Populares
-            </Link>
-            <Link className="nav-link" to="/pages/filmes/FilmesLancamento">
-              Filmes em Lançamento
-            </Link>
-            <Link className="nav-link" to="/pages/filmes/FilmesCartaz">
-              Filmes em Cartaz
-            </Link>
+            <Link className="nav-link" to="/carros">Home</Link>
+
+            <NavDropdown title="Filmes" id="nav-dropdown">
+              <NavDropdown.Item href="/pages/filmes/FilmesPopulares">Populares</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="/pages/filmes/FilmesLancamento">Lançamentos</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="/pages/filmes/FilmesCartaz">Em breve</NavDropdown.Item>
+            </NavDropdown>
+
+            <NavDropdown title="Mais Informações" id="nav-dropdown">
+              <NavDropdown.Item href="/pagina1">Pagina</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="/array">Array</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="/objeto">Carros</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="/contador">Contador</NavDropdown.Item>
+            </NavDropdown>
+
           </Nav>
         </Container>
       </Navbar>
