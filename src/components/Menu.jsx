@@ -20,6 +20,14 @@ const Menu = () => {
               <NavDropdown.Item href="/pages/filmes/FilmesCartaz">Em breve</NavDropdown.Item>
             </NavDropdown>
 
+            <NavDropdown title="Séries" id="nav-dropdown">
+              <NavDropdown.Item href="/pages/series/SeriesEstreladoHoje">Estrelados Hoje</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="/pages/series/SeriesNoAr">No Ar</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="/pages/series/SeriesPopulares">Populares</NavDropdown.Item>
+            </NavDropdown>
+
             <NavDropdown title="Mais Informações" id="nav-dropdown">
               <NavDropdown.Item href="/pagina1">Pagina</NavDropdown.Item>
               <NavDropdown.Divider />

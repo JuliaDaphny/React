@@ -1,12 +1,11 @@
 import axios from "axios";
-import token from "./token";
 
 //Json
 const parametroApiList = {
-    baseURL: 'https://api.themoviedb.org/3/',
+    baseURL: process.env.REACT_APP_URL_FILMES,
     headers: {
         'Content-type': 'application/json;charset=utf-8',
-        'Authorization': 'Bearer ' + token,
+        'Authorization': 'Bearer ' + process.env.REACT_APP_API_KEY_FILMES,
     }
 }
 
