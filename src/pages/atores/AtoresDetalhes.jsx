@@ -4,26 +4,30 @@ import { Link, useParams } from 'react-router-dom';
 import apiFilmes from '../../services/apiFilmes';
 
 
-const AtoresFilmes = () => {
+const AtoresDetalhes = () => {
 
     const params = useParams()
     const [ator, setAtor] = useState({})
+    const [series, setSeries] = useState([])
     const [filmes, setFilmes] = useState([])
-
 
     useEffect(() => {
         apiFilmes.get('person/' + params.id + '?language=pt-BR').then(resultado => {
             setAtor(resultado.data)
         })
 
-        apiFilmes.get('person/' + params.id + '/movie_credits?language=pt-BR').then(resultado => {
-            setFilmes(resultado.data.cast);
+        apiFilmes.get('person/' + params.id + '/tv_credits?language=pt-BR').then(resultado => {
+            setSeries(resultado.data.cast)
         })
 
-    }, [])
+        apiFilmes.get('person/' + params.id + '/movie_credits?language=pt-BR').then(resultado => {
+            setFilmes(resultado.data.cast)
+        })
 
-    console.log(ator)
+    }, [params.id])
+
     console.log(filmes)
+    console.log(series)
 
     return (
         <div>
@@ -37,7 +41,7 @@ const AtoresFilmes = () => {
                     <Container>
                         <Row>
                             <Col xs={5}>
-                                <Card.Img variant="top" src={"https://image.tmdb.org/t/p/w500/" + ator.profile_path} />
+                                <Card.Img variant="top" src={ator.profile_path ? 'https://image.tmdb.org/t/p/w500' + ator.profile_path : 'https://cdn.onlinewebfonts.com/svg/img_303551.png'} />
                             </Col>
                             <Col xs={7}>
                                 <Card>
@@ -60,9 +64,25 @@ const AtoresFilmes = () => {
                                 <Col className="mb-3" md={2} key={item.id}>
                                     <Card>
                                         <Card.Body>
-                                            <Card.Img variant="top" src={'https://image.tmdb.org/t/p/w500/' + item.backdrop_path} />
+                                            <Card.Img variant="top" src={item.poster_path ? 'https://image.tmdb.org/t/p/w500' + item.poster_path: 'https://cdn2.iconfinder.com/data/icons/line-files-type/129/Movie_File-512.png'} />
                                             <Card.Text className="m-sm-2">{item.title}</Card.Text>
                                             <Link className="btn btn-dark btn-lg btn-sm mt-3 m-1" to={'/filmes/' + item.id}>Mais detalhes</Link>
+                                        </Card.Body>
+                                    </Card>
+                                </Col>
+                            ))}
+                        </Row>
+                        <Row>
+                            <h1 className="m-5"> Séries que participou: </h1>
+
+                            {series.map(item => (
+
+                                <Col className="mb-3" md={2} key={item.id}>
+                                    <Card>
+                                        <Card.Body>
+                                            <Card.Img variant="top" src={item.poster_path ? 'https://image.tmdb.org/t/p/w500' + item.poster_path: 'https://cdn2.iconfinder.com/data/icons/line-files-type/129/Movie_File-512.png'} />
+                                            <Card.Text className="m-sm-2">{item.title}</Card.Text>
+                                            <Link className="btn btn-dark btn-lg btn-sm mt-3 m-1" to={'/series/' + item.id}>Mais detalhes</Link>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -75,4 +95,4 @@ const AtoresFilmes = () => {
     )
 };
 
-export default AtoresFilmes;
+export default AtoresDetalhes;

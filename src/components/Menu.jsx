@@ -19,7 +19,7 @@ const Menu = () => {
               <NavDropdown.Divider />
               <NavDropdown.Item href="/pages/filmes/FilmesCartaz">Em breve</NavDropdown.Item>
             </NavDropdown>
-
+            
             <NavDropdown title="Séries" id="nav-dropdown">
               <NavDropdown.Item href="/pages/series/SeriesEstreladoHoje">Estrelados Hoje</NavDropdown.Item>
               <NavDropdown.Divider />

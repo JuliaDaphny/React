@@ -27,7 +27,7 @@ const FilmesCartaz = () => {
                     {filmes.map(item => (
                         <Col md={4} className="mb-4" key={item.id}>
                             <Card>
-                                <Card.Img variant="top" src={"https://image.tmdb.org/t/p/w500/" + item.poster_path} />
+                                <Card.Img variant="top" src={item.poster_path ? 'https://image.tmdb.org/t/p/w500' + item.poster_path: 'https://cdn2.iconfinder.com/data/icons/line-files-type/129/Movie_File-512.png'} />
                                 <Card.Body>
                                     <Card.Title>{item.title}</Card.Title>
                                     <Card.Text>Data de estreia: {item.release_date}</Card.Text>

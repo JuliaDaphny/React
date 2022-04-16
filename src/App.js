@@ -11,10 +11,11 @@ import FilmesPopulares from "./pages/filmes/FilmesPopulares";
 import FilmesDetalhes from "./pages/filmes/FilmesDetalhes";
 import FilmesLancamento from "./pages/filmes/FilmesLancamento";
 import FilmesCartaz from "./pages/filmes/FilmesCartaz";
-import AtoresFilmes from "./pages/atores/AtoresFilmes";
 import SeriesEstreladoHoje from "./pages/series/SeriesEstreladoHoje";
 import SeriesNoAr from "./pages/series/SeriesNoAr";
 import SeriesPopulares from "./pages/series/SeriesPopulares";
+import SeriesDetalhes from "./pages/series/SeriesDetalhes";
+import AtoresDetalhes from "./pages/atores/AtoresDetalhes";
 
 function App() {
   return (
@@ -33,10 +34,11 @@ function App() {
             <Route path="/pages/filmes/FilmesLancamento" element={<FilmesLancamento />} />
             <Route path="/pages/filmes/FilmesCartaz" element={<FilmesCartaz />} />
             <Route path="/filmes/:id" element={<FilmesDetalhes />} />
-            <Route path="/atores/:id" element={<AtoresFilmes />} />
+            <Route path="/atores/:id" element={<AtoresDetalhes />} />
             <Route path="/pages/series/SeriesEstreladoHoje" element={<SeriesEstreladoHoje />} />
             <Route path="/pages/series/SeriesNoAr" element={<SeriesNoAr />} />
             <Route path="/pages/series/SeriesPopulares" element={<SeriesPopulares />} />
+            <Route path="/series/:id" element={<SeriesDetalhes />} />
           </Routes>
         </Container>
       </BrowserRouter>
