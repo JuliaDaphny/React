@@ -11,7 +11,7 @@ const SeriesPopulares = () => {
 
     useEffect(() => {
 
-        apiFilmes.get('tv/popular?language=pt-BR').then(resultado => {
+        apiFilmes.get('tv/airing_today?language=pt-BR').then(resultado => {
             setSeries(resultado.data.results)
         })
 
